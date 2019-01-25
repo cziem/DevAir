@@ -1,3 +1,5 @@
+require('./config/config')
+
 const express         = require('express'),
      mongoose        = require('mongoose'),
      cors            = require('cors'),
@@ -16,10 +18,13 @@ const app    =  express(),
 mongoose.connect(uri, {
   useCreateIndex: true,
   useNewUrlParser: true
-}).then(() => console.log(`Connected to DB @: ${uir}`))
+}).then(() => console.log(`Connected to DB @: ${uri}`))
   .catch(err => console.log(`Could not connect to DB. Please refer to Error: ${err.message}`))
 
 /* ALL APP.USE() CALLS HERER */
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 /* APPLICATION ROUTES HERE */
