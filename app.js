@@ -12,6 +12,7 @@ const app    =  express(),
      secret =   process.env.APP_SECRET
 
 /* REQUIRE CUSTOM MODULES HERE */
+const airRoutes = require('./routes/route')
 
 
 /* START DB CONNECTION */
@@ -25,14 +26,11 @@ mongoose.connect(uri, {
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
+app.use(express.static(__dirname + '/public'))
 
 
 /* APPLICATION ROUTES HERE */
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to DevAir',
-    type: 'You made a GET request to our API'
-  })
-})
+app.use('/*', airRoutes)
 
 app.listen(port, () => console.log(`DevAir running on port localhost://${port}`))
