@@ -6,6 +6,12 @@
   "repository": "git@github.com:phavor/DevAir.git",
   "author": "Fayvor George <phavorsparks@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node app",
+    "start:dev": "nodemon app.js -ext '.ejs/.css'",
+    "dbon": "sudo systemctl start mongod",
+    "dboff": "sudo systemctl stop mongod"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
