@@ -2,9 +2,7 @@
 
 Share your dev event stories and make reviews
 
-## DevAir
-
-This is a web application that allows users to make reviews of Tech Events, Meetups or Summits.
+`DevAir` is a web application that allows users to make reviews of Tech Events, Meetups or Summits.
 
 ## How it works
 
@@ -24,3 +22,6 @@ As an organizer you get to learn where you and your team needs improvement and g
 
 Our intentions are clear. We want `DevAir` to be the goto place for dev/tech events reviews.
 
+## Contributing
+
+`clone`, `npm install` or `yarn` from your terminal and fire down...
